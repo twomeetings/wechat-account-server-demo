@@ -28,8 +28,8 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/access_token', async (req, res)=>{
-    const res = await fetch(`https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appID}&secret=${appsecret}`)
-    const json = res.json()
+    const response = await fetch(`https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appID}&secret=${appsecret}`)
+    const json = response.json()
     console.log('==== json:' , json)
     res.send(json)
 })
